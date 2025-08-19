@@ -1,0 +1,49 @@
+Test Account keypair: 2CzwMTABCiyZ8HPAdCdPyqP5cQuyTiWrq7xeJVdfT8hX
+   SOL Balance: 1.0000 SOL
+GlobalAccount {
+  discriminator: 9183522199395952807n,
+  initialized: true,
+  authority: PublicKey [PublicKey(CnC6mjiE9siqYmR8dCqQGJmK8jVfo2KsPycQZy2kFyf1)] {
+    _bn: <BN: af043e2b5bbdb165df27a65fde1b13dd3b79066551ee169b288ce278dd6aa0fc>
+  },
+  feeRecipient: PublicKey [PublicKey(68yFSZxzLWJXkxxRGydZ63C6mHx1NLEDWmwN9Lb5yySg)] {
+    _bn: <BN: 4c5519e9876412b852caf722a4281dcd6b846a0a1275d13aa2969224e85b65b1>
+  },
+  initialVirtualTokenReserves: 1073000000000000n,
+  initialVirtualSolReserves: 30000000000n,
+  initialRealTokenReserves: 50100000000000n,
+  tokenTotalSupply: 1000000000000000n,
+  feeBasisPoints: 95n
+}
+GlobalAccount {
+  discriminator: 9183522199395952807n,
+  initialized: true,
+  authority: PublicKey [PublicKey(CnC6mjiE9siqYmR8dCqQGJmK8jVfo2KsPycQZy2kFyf1)] {
+    _bn: <BN: af043e2b5bbdb165df27a65fde1b13dd3b79066551ee169b288ce278dd6aa0fc>
+  },
+  feeRecipient: PublicKey [PublicKey(68yFSZxzLWJXkxxRGydZ63C6mHx1NLEDWmwN9Lb5yySg)] {
+    _bn: <BN: 4c5519e9876412b852caf722a4281dcd6b846a0a1275d13aa2969224e85b65b1>
+  },
+  initialVirtualTokenReserves: 1073000000000000n,
+  initialVirtualSolReserves: 30000000000n,
+  initialRealTokenReserves: 50100000000000n,
+  tokenTotalSupply: 1000000000000000n,
+  feeBasisPoints: 95n
+}
+sig: https://solscan.io/tx/5jTXny6s9q4YbHg8dCQCSSUVa4sv3prQWYTcHpTRy7wNak9xg23XET5rSxmyVumoy1oGzNXpz4ssENs22ysSLkjo
+Success: https://pump.fun/7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v
+Bonding curve after create and buy BondingCurveAccount {
+  discriminator: 6966180631402821399n,
+  virtualTokenReserves: 1073000000000000n,
+  virtualSolReserves: 30000000000n,
+  realTokenReserves: 50100000000000n,
+  realSolReserves: 0n,
+  tokenTotalSupply: 1000000000000000n,
+  complete: false
+}
+SPL Token: 7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v
+   Owner: 2CzwMTABCiyZ8HPAdCdPyqP5cQuyTiWrq7xeJVdfT8hX
+   Balance: 0
+SendTransactionErrorProgram ComputeBudget111111111111111111111111111111 invoke [1],Program ComputeBudget111111111111111111111111111111 success,Program ComputeBudget111111111111111111111111111111 invoke [1],Program ComputeBudget111111111111111111111111111111 success,Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL invoke [1],Program log: Create,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2],Program log: Instruction: GetAccountDataSize,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1569 of 242833 compute units,Program return: TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA pQAAAAAAAAA=,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success,Program 11111111111111111111111111111111 invoke [2],Program 11111111111111111111111111111111 success,Program log: Initialize the associated token account,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2],Program log: Instruction: InitializeImmutableOwner,Program log: Please upgrade to SPL Token 2022 for immutable owner support,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 1405 of 236246 compute units,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA invoke [2],Program log: Instruction: InitializeAccount3,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA consumed 4188 of 232364 compute units,Program TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA success,Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL consumed 21807 of 249700 compute units,Program ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL success,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1],Program log: Instruction: Buy,Program log: AnchorError occurred. Error Code: AccountNotEnoughKeys. Error Number: 3005. Error Message: Not enough account keys given to the instruction.,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P consumed 9360 of 227893 compute units,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0xbbd
+Buy failed
+currentSPLBalance 0

@@ -9,7 +9,7 @@ interface BuyTokensConfig {
   mintAddress: string;
   buyAmountSol: number;
   slippageBasisPoints?: number;
-  walletType?: "trading" | "test";
+  walletType?: "trading";
 }
 
 class TokenBuyer {
@@ -96,8 +96,8 @@ class TokenBuyer {
         console.log("✅ Token found on Pump.fun");
         console.log(`   Supply: ${bondingCurveAccount.virtualTokenReserves.toString()}`);
         console.log(`   Reserve: ${bondingCurveAccount.virtualSolReserves.toString()} SOL`);
-        console.log(`   Buy Price: ${bondingCurveAccount.getBuyPrice(1000n).toString()} SOL`);
-        console.log(`   Sell Price: ${bondingCurveAccount.getSellPrice(1000n, 100n).toString()} SOL`);
+        console.log(`   Buy Price: ${bondingCurveAccount.getBuyPrice(BigInt(1000)).toString()} SOL`);
+        console.log(`   Sell Price: ${bondingCurveAccount.getSellPrice(BigInt(1000), BigInt(100)).toString()} SOL`);
       } else {
         console.log("❌ Token not found on Pump.fun");
         console.log("   This token may not exist or may not be listed on Pump.fun");
@@ -142,24 +142,34 @@ class TokenBuyer {
       if (!bondingCurveAccount) {
         throw new Error("Token not found on Pump.fun. Cannot buy.");
       }
+
+      // Execute buy transaction with priority fees
+      console.log("📝 Executing buy transaction with priority fees...");
+      const priorityFees = {
+        unitLimit: 250000,
+        unitPrice: 250000,
+      };
       
-      // Execute buy transaction
-      console.log("📝 Executing buy transaction...");
       const result = await this.sdk.buy(
         wallet,
         mint,
         buyAmountLamports,
-        BigInt(slippageBasisPoints)
+        BigInt(slippageBasisPoints),
+        priorityFees
       );
       
+      if (!result.success) {
+        throw new Error(`Buy failed: ${result.error || 'Unknown error'}`);
+      }
+      
       console.log("✅ Buy transaction successful!");
-      console.log(`   Transaction: ${result.signature}`);
-      console.log(`   Slot: ${result.results?.slot}`);
+      console.log(`   Transaction: ${result.signature || 'Unknown signature'}`);
+      console.log(`   Slot: ${result.results?.slot || 'Unknown slot'}`);
       
       // Wait for confirmation
       console.log("⏳ Waiting for confirmation...");
       const connection = this.sdk.connection;
-      const confirmation = await connection.confirmTransaction(result.signature!, "confirmed");
+      const confirmation = await connection.confirmTransaction(result.signature || '', "confirmed");
       
       if (confirmation.value.err) {
         throw new Error(`Transaction failed: ${confirmation.value.err}`);
@@ -206,14 +216,18 @@ class TokenBuyer {
         BigInt(500) // 5% slippage
       );
       
+      if (!result.success) {
+        throw new Error(`Sell failed: ${result.error || 'Unknown error'}`);
+      }
+      
       console.log("✅ Sell transaction successful!");
-      console.log(`   Transaction: ${result.signature}`);
-      console.log(`   Slot: ${result.results?.slot}`);
+      console.log(`   Transaction: ${result.signature || 'Unknown signature'}`);
+      console.log(`   Slot: ${result.results?.slot || 'Unknown slot'}`);
       
       // Wait for confirmation
       console.log("⏳ Waiting for confirmation...");
       const connection = this.sdk.connection;
-      const confirmation = await connection.confirmTransaction(result.signature!, "confirmed");
+      const confirmation = await connection.confirmTransaction(result.signature || '', "confirmed");
       
       if (confirmation.value.err) {
         throw new Error(`Transaction failed: ${confirmation.value.err}`);
@@ -259,8 +273,8 @@ async function main() {
     
     // Example: Buy tokens (you can modify these parameters)
     const buyConfig: BuyTokensConfig = {
-      mintAddress: "YOUR_TOKEN_MINT_ADDRESS_HERE", // Replace with actual token mint address
-      buyAmountSol: 0.01, // 0.01 SOL
+      mintAddress: "7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v", // Your created token
+      buyAmountSol: 0.0001, // 0.0001 SOL (very small amount)
       slippageBasisPoints: 500, // 5%
       walletType: "trading"
     };
@@ -271,11 +285,11 @@ async function main() {
     console.log(`   Slippage: ${buyConfig.slippageBasisPoints! / 100}%`);
     console.log();
     
-    // Uncomment the line below to actually execute the buy
-    // await buyer.buyTokens(buyConfig);
+    // Test the buy method
+    console.log("🔧 Testing buy function...");
+    await buyer.buyTokens(buyConfig);
     
-    console.log("💡 To execute the buy, uncomment the buyTokens call in the code");
-    console.log("💡 Make sure to set a valid token mint address");
+    console.log("✅ Buy operation completed successfully!");
     
   } catch (error) {
     console.error("❌ Program failed:", error);

@@ -1,0 +1,71 @@
+📁 Available wallets:
+   - test-wallet.json
+   - trading-wallet.json
+
+🚀 Initializing PumpFun SDK...
+   Wallet: 2wVYga9kfYsmKn3WJfSTfQP5ZjSSzMLJZVUc5n7QTZiQ
+🔧 Provider Configuration:
+   RPC URL: https://api.devnet.solana.com
+   Network: 🟢 Devnet
+   Commitment: confirmed
+   Priority Fee: Not set
+   💡 Devnet Faucet: https://faucet.solana.com/
+   ✅ Configuration is valid
+✅ PumpFun SDK initialized successfully
+💰 Wallet Balance: 1.9980 SOL
+
+📋 Buy Configuration:
+   Token: 7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v
+   Amount: 0.0001 SOL
+   Slippage: 5%
+
+🔧 Testing buy function...
+🛒 Buying tokens...
+   Token: 7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v
+   Amount: 0.0001 SOL
+   Slippage: 5%
+   Wallet: 2wVYga9kfYsmKn3WJfSTfQP5ZjSSzMLJZVUc5n7QTZiQ
+🔍 Getting token information for: 7vS7ViHrrMSx19kG95k1KKDFDdq3YTBZNJrDwhPTTj9v
+✅ Token found on Pump.fun
+   Supply: 1073000000000000
+   Reserve: 30000000000 SOL
+   Buy Price: 35766665 SOL
+   Sell Price: 0 SOL
+📝 Executing buy transaction with priority fees...
+SendTransactionErrorProgram ComputeBudget111111111111111111111111111111 invoke [1],Program ComputeBudget111111111111111111111111111111 success,Program ComputeBudget111111111111111111111111111111 invoke [1],Program ComputeBudget111111111111111111111111111111 success,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1],Program log: Instruction: Buy,Program log: AnchorError occurred. Error Code: AccountNotEnoughKeys. Error Number: 3005. Error Message: Not enough account keys given to the instruction.,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P consumed 9360 of 249700 compute units,Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0xbbd
+❌ Error buying tokens: Error: Buy failed: Error: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 2: custom program error: 0xbbd. 
+Logs: 
+[
+  "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+  "Program ComputeBudget111111111111111111111111111111 success",
+  "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+  "Program ComputeBudget111111111111111111111111111111 success",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+  "Program log: Instruction: Buy",
+  "Program log: AnchorError occurred. Error Code: AccountNotEnoughKeys. Error Number: 3005. Error Message: Not enough account keys given to the instruction.",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P consumed 9360 of 249700 compute units",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0xbbd"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+    at TokenBuyer.buyTokens (/Users/navalsaini/experiments/using-pumpfun-sdk/src/buy-tokens.ts:162:15)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at main (/Users/navalsaini/experiments/using-pumpfun-sdk/src/buy-tokens.ts:290:5)
+❌ Program failed: Error: Buy failed: Error: Simulation failed. 
+Message: Transaction simulation failed: Error processing Instruction 2: custom program error: 0xbbd. 
+Logs: 
+[
+  "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+  "Program ComputeBudget111111111111111111111111111111 success",
+  "Program ComputeBudget111111111111111111111111111111 invoke [1]",
+  "Program ComputeBudget111111111111111111111111111111 success",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P invoke [1]",
+  "Program log: Instruction: Buy",
+  "Program log: AnchorError occurred. Error Code: AccountNotEnoughKeys. Error Number: 3005. Error Message: Not enough account keys given to the instruction.",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P consumed 9360 of 249700 compute units",
+  "Program 6EF8rrecthR5Dkzon8Nwu78hRvfCKubJ14M5uBEwF6P failed: custom program error: 0xbbd"
+]. 
+Catch the `SendTransactionError` and call `getLogs()` on it for full details.
+    at TokenBuyer.buyTokens (/Users/navalsaini/experiments/using-pumpfun-sdk/src/buy-tokens.ts:162:15)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at main (/Users/navalsaini/experiments/using-pumpfun-sdk/src/buy-tokens.ts:290:5)

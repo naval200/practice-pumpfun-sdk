@@ -1,0 +1,36 @@
+{
+  "name": "pumpfun-token-buyer",
+  "version": "1.0.0",
+  "description": "A program to buy tokens using PumpFun SDK",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node src/index.ts",
+    "buy": "ts-node src/buy-tokens.ts",
+    "create-buy": "ts-node src/create-and-buy.ts",
+    "test": "ts-node src/test-setup.ts",
+    "example": "ts-node src/examples/simple-buy.ts",
+    "basic": "ts-node example/basic/index.ts",
+    "events": "ts-node example/events/events.ts"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.29.0",
+    "@solana/web3.js": "^1.87.6",
+    "dotenv": "^16.3.1",
+    "pumpdotfun-sdk": "^1.4.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.3.0"
+  },
+  "keywords": [
+    "pumpfun",
+    "solana",
+    "tokens",
+    "defi"
+  ],
+  "author": "",
+  "license": "MIT"
+}
